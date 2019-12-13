@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Racoon test</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css" />		
+</head>
+<body>
+	<div class="out">
+		
+<main class="content">
+	<div class="wrapper">
+		<div class="logo-block">
+			<a href="https://raccoongang.com/" target="_black"><img src="img/logo.jpg" alt=""></a>
+		</div>
+		<section class="section-block">
+			<form>
+				<div class="search-form">
+					<div class="search-form__item">
+						<input class="search-form__input" type="text">
+						<button class="search-form__button">найти</button>
+					</div>
+					<div class="search-form__item">
+						<input class="search-form__input" type="text">
+						<button class="search-form__button">go</button>
+					</div>
+				</div>
+			</form>
+		</section>
+		<section class="section-block">
+			<nav class="navigation js-navigation">
+				<div class="menu-placeholder js-menu-placeholder">
+		            <span class="menu-placeholder__text js-placeholder-text">Select</span>
+		        </div>
+				<ul class="menu-list">
+					<li class="menu-list__item">
+						<a class="menu-list__link" href="">Link 1</a>
+					</li>
+					<li class="menu-list__item menu-list__item--is-active">
+						<a class="menu-list__link" href="">Link 2</a>
+					</li>
+					<li class="menu-list__item">
+						<a class="menu-list__link" href="">Link 3</a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<section class="section-block">
+			<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error sapiente eos laboriosam, animi facere sequi.</h2>
+			<ol>
+				<li>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam odit eos animi minus sed nostrum maiores vel officia, dolor reiciendis suscipit veniam debitis possimus sunt, eveniet nam! Eveniet, accusantium tempore.</p>
+				</li>
+				<li>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam odit eos animi minus sed nostrum maiores vel officia, dolor reiciendis suscipit veniam debitis possimus sunt, eveniet nam! Eveniet, accusantium tempore.</p>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt atque repellendus natus in nisi eum numquam tenetur, quo et, delectus nemo voluptatum repudiandae repellat doloribus nesciunt veniam mollitia reiciendis tempora.
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt atque repellendus natus in nisi eum numquam tenetur, quo et, delectus nemo voluptatum repudiandae repellat doloribus nesciunt veniam mollitia reiciendis tempora.
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt atque repellendus natus in nisi eum numquam tenetur, quo et, delectus nemo voluptatum repudiandae repellat doloribus nesciunt veniam mollitia reiciendis tempora.
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt atque repellendus natus in nisi eum numquam tenetur, quo et, delectus nemo voluptatum repudiandae repellat doloribus nesciunt veniam mollitia reiciendis tempora.
+					</p>
+				</li>
+				<li>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam odit eos animi minus sed nostrum maiores vel officia, dolor reiciendis suscipit veniam debitis possimus sunt, eveniet nam! Eveniet, accusantium tempore.</p>
+				</li>
+				<li>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam odit eos animi minus sed nostrum maiores vel officia, dolor reiciendis suscipit veniam debitis possimus sunt, eveniet nam! Eveniet, accusantium tempore.</p>
+				</li>
+			</ol>
+		</section>
+	</div>
+</main>
+<script>
+	var nav = document.querySelector('.js-navigation');
+	var menuItems = nav.querySelectorAll('.menu-list__item');
+	var menuLinks = nav.querySelectorAll('.menu-list__link');
+	var menuPlaceholder = nav.querySelector('.js-menu-placeholder');
+	var activeClass = 'menu-list__item--is-active';
+
+	Array.prototype.forEach.call(menuLinks, function(link) {
+        link.addEventListener('click', function(event) {
+        	if ( window.innerWidth >= 800 ) return;
+        	event.preventDefault();
+        	menuPlaceholder.children[0].innerHTML = link.textContent;
+
+			Array.prototype.forEach.call(menuItems, function(el, i){
+				if ( !el.classList.contains(activeClass) ) return;
+				el.classList.remove(activeClass);
+			});
+            
+        	link.parentElement.classList.add(activeClass);
+
+	   		nav.classList.remove('menu-is-open');
+        });
+    });
+
+    menuPlaceholder.addEventListener('click', function() {
+	   nav.classList.add('menu-is-open');
+    });
+</script>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+:root{
+	--main-color: #71bf4b;
+	--dark-color: #343434;
+}
+img{
+	max-height: 100%;
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	background-color: #dddddd;
+}
+.out {
+	min-width: 320px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	position: relative;
+	background-image: linear-gradient(to top right, transparent 50%, #e7e7e7 50%);
+}
+.wrapper {
+	max-width: 1340px;
+	margin: auto;
+	padding: 0 20px;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--main-color);
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+h1, .h1 {
+  font-size: 2.5rem;
+  @include r(800) {
+  	font-size: 2.0rem;
+  }
+}
+h2, .h2 {
+  font-size: 1.75rem;
+  @include r(800) {
+  	font-size: 1.5rem;
+  }
+}
+h3, .h3 {
+  font-size: 1.5rem;
+  @include r(800) {
+  	font-size: 1.25rem;
+  }
+}
+h4, .h4 {
+  font-size: 1.25rem;
+  @include r(800) {
+  	font-size: 1rem;
+  }
+}
+h5, .h5 {
+  font-size: 1rem;
+  @include r(800) {
+  	font-size: 0.75rem;
+  }
+}
+h6, .h6 {
+  font-size: 0.75rem;
+  @include r(800) {
+  	font-size: 0.71rem;
+  }
+}
